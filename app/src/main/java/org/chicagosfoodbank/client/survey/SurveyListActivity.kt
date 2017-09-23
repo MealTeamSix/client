@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import org.chicagosfoodbank.client.R
 
-class SurveyActivity : AppCompatActivity() {
+class SurveyListActivity : AppCompatActivity() {
 
     companion object {
         fun getStartIntent(context: Context) : Intent {
-            return Intent(context, SurveyActivity::class.java)
+            return Intent(context, SurveyListActivity::class.java)
         }
     }
 

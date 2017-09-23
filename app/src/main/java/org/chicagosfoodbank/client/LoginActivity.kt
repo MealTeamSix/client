@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_login.*
+import org.chicagosfoodbank.client.survey.SurveyListActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -23,5 +24,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun goToSurvey() {
         Toast.makeText(this, "login", Toast.LENGTH_LONG).show()
+
+        startActivity(SurveyListActivity.getStartIntent(this))
     }
 }
