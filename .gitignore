@@ -58,3 +58,9 @@ gen-external-apklibs
 *.jar
 
 # End of https://www.gitignore.io/api/android
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/runConfigurations.xml
+.idea/vcs.xml
+.idea/copyright/profiles_settings.xml
