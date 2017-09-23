@@ -7,11 +7,12 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_survey_list.*
 import org.chicagosfoodbank.client.R
+import org.chicagosfoodbank.client.model.Survey
 import org.chicagosfoodbank.client.surveys.survey.SurveyActivity
 
 class SurveyListActivity : AppCompatActivity(), SurveyAdapter.SurveyAdapterListener {
 
-    val surveyRepository = SurveyRepositoryImpl()
+    val surveyRepository = SurveyRepositoryImpl
 
     companion object {
         fun getStartIntent(context: Context) : Intent {

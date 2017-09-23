@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import kotlinx.android.synthetic.main.item_survey.view.*
 import org.chicagosfoodbank.client.R
+import org.chicagosfoodbank.client.model.Survey
 
 /**
  * Created by nick.cruz on 9/23/17.

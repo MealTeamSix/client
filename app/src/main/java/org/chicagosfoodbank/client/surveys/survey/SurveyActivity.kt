@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_survey.*
 import org.chicagosfoodbank.client.R
-import org.chicagosfoodbank.client.surveys.Survey
+import org.chicagosfoodbank.client.model.Survey
 
 class SurveyActivity : AppCompatActivity() {
 
@@ -32,7 +32,7 @@ class SurveyActivity : AppCompatActivity() {
         textViewSurveyTitle.text = survey.name
         survey.fields.forEach {
             val editText : EditText = EditText(this)
-            editText.hint = it
+            editText.hint = it.title
             linearLayoutFields.addView(editText)
         }
     }

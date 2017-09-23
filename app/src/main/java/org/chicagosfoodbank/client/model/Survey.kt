@@ -1,14 +1,14 @@
-package org.chicagosfoodbank.client.surveys
+package org.chicagosfoodbank.client.model
 
 import android.os.Parcel
 import android.os.Parcelable
 
 /**
- * Created by nick.cruz on 9/23/17.
+ * Created by nick.cruz on 9/23/17
  */
 data class Survey(val surveyId: Int,
                   val name: String,
-                  val fields: List<String>) : Parcelable {
+                  val fields: MutableList<Field>) : Parcelable {
 
     companion object {
         @JvmField val CREATOR: Parcelable.Creator<Survey> = object : Parcelable.Creator<Survey> {
@@ -20,9 +20,12 @@ data class Survey(val surveyId: Int,
     constructor(source: Parcel) : this(
             source.readLong().toInt(),
             source.readString(),
-            mutableListOf()
+            mutableListOf<Field>()
     ) {
-        source.readStringList(fields)
+        val numFields = source.readInt()
+        for (i in 1..numFields) {
+            fields.add(source.readParcelable<Field>(Field::class.java.classLoader))
+        }
     }
 
     override fun describeContents() = 0
@@ -30,7 +33,10 @@ data class Survey(val surveyId: Int,
     override fun writeToParcel(dest: Parcel, flags: Int) {
         dest.writeLong(surveyId.toLong())
         dest.writeString(name)
-        dest.writeStringList(fields)
+        dest.writeInt(fields.size)
+        fields.forEach {
+            dest.writeParcelable(it, 0)
+        }
     }
 
 }
