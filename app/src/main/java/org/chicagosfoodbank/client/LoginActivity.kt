@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
 import org.chicagosfoodbank.client.surveys.SurveyListActivity
+import java.util.*
 
 
 class LoginActivity : AppCompatActivity() {
 
     val firebaseAuth = FirebaseAuth.getInstance()
-
-    val basicLogin = BasicLogin()
+    val databaseReference = FirebaseDatabase.getInstance().getReference()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +33,6 @@ class LoginActivity : AppCompatActivity() {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
                         println("Sign in success!")
-                        val user = firebaseAuth.getCurrentUser()
                         goToSurvey()
                     } else {
                         // If sign in fails, display a message to the user.
@@ -45,6 +45,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun goToSurvey() {
+        val currentTime = Date()
+        databaseReference.child("AppUsers").child(firebaseAuth.currentUser?.uid).setValue("logged in: $currentTime")
         startActivity(SurveyListActivity.getStartIntent(this))
     }
 }
