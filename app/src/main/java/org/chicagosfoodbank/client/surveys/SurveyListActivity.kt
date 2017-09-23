@@ -12,7 +12,7 @@ import org.chicagosfoodbank.client.surveys.survey.SurveyActivity
 
 class SurveyListActivity : AppCompatActivity(), SurveyAdapter.SurveyAdapterListener {
 
-    val surveyRepository = SurveyRepositoryImpl
+    val surveyRepository : SurveyRepository = SurveyRepositoryImpl
 
     companion object {
         fun getStartIntent(context: Context) : Intent {
