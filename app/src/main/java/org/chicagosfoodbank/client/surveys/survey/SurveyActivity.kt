@@ -6,12 +6,13 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.widget.EditText
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_survey.*
 import org.chicagosfoodbank.client.R
 import org.chicagosfoodbank.client.model.Field
 import org.chicagosfoodbank.client.model.Survey
-import org.chicagosfoodbank.client.surveys.SurveyRepository
-import org.chicagosfoodbank.client.surveys.SurveyRepositoryImpl
+import org.chicagosfoodbank.client.repository.FirebaseRepository
+import org.chicagosfoodbank.client.repository.SurveyRepository
 
 class SurveyActivity : AppCompatActivity() {
 
@@ -26,7 +27,7 @@ class SurveyActivity : AppCompatActivity() {
     }
 
     lateinit var survey: Survey
-    val surveyRepository : SurveyRepository = SurveyRepositoryImpl
+    val surveyRepository : SurveyRepository = FirebaseRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,13 +63,14 @@ class SurveyActivity : AppCompatActivity() {
                         survey.fields.add(Field(
                                 fieldId,
                                 title,
-                                childEditText.text.toString(),
-                                email))
+                                childEditText.text.toString()))
                     }
                 }
             }
         }
 
         surveyRepository.uploadSurvey(survey)
+
+        Toast.makeText(this, "Thanks for submitting!", Toast.LENGTH_LONG).show()
     }
 }
