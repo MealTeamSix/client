@@ -11,6 +11,9 @@ data class Survey(val surveyId: Int,
                   val fields: MutableList<Field>) : Parcelable {
 
     companion object {
+        val EMPTY_SURVEYS = "EmptySurveys"
+        val FILLED_SURVEYS = "FilledSurveys"
+
         @JvmField val CREATOR: Parcelable.Creator<Survey> = object : Parcelable.Creator<Survey> {
             override fun createFromParcel(source: Parcel): Survey = Survey(source)
             override fun newArray(size: Int): Array<Survey?> = arrayOfNulls(size)

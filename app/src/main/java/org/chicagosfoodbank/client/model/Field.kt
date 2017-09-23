@@ -9,8 +9,7 @@ import android.os.Parcelable
 data class Field(
         val fieldId: Int,
         val title: String,
-        val answer: String,
-        val email: String) : Parcelable {
+        val answer: String) : Parcelable {
 
     companion object {
         @JvmField val CREATOR: Parcelable.Creator<Field> = object : Parcelable.Creator<Field> {
@@ -22,7 +21,6 @@ data class Field(
     constructor(source: Parcel) : this(
             source.readLong().toInt(),
             source.readString(),
-            source.readString(),
             source.readString()
     )
 
@@ -32,6 +30,5 @@ data class Field(
         dest.writeLong(fieldId.toLong())
         dest.writeString(title)
         dest.writeString(answer)
-        dest.writeString(email)
     }
 }
