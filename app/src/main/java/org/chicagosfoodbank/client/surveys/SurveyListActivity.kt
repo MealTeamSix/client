@@ -1,13 +1,13 @@
-package org.chicagosfoodbank.client.survey
+package org.chicagosfoodbank.client.surveys
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_survey.*
+import kotlinx.android.synthetic.main.activity_survey_list.*
 import org.chicagosfoodbank.client.R
+import org.chicagosfoodbank.client.surveys.survey.SurveyActivity
 
 class SurveyListActivity : AppCompatActivity(), SurveyAdapter.SurveyAdapterListener {
 
@@ -21,7 +21,7 @@ class SurveyListActivity : AppCompatActivity(), SurveyAdapter.SurveyAdapterListe
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_survey)
+        setContentView(R.layout.activity_survey_list)
 
         val surveyAdapter = SurveyAdapter(this, this)
 
@@ -32,6 +32,6 @@ class SurveyListActivity : AppCompatActivity(), SurveyAdapter.SurveyAdapterListe
     }
 
     override fun onSurveyClicked(survey: Survey) {
-        Toast.makeText(this, "survey Clicked: ${survey.name}", Toast.LENGTH_LONG).show()
+        startActivity(SurveyActivity.getStartIntent(this, survey))
     }
 }

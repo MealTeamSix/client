@@ -1,4 +1,4 @@
-package org.chicagosfoodbank.client.survey
+package org.chicagosfoodbank.client.surveys
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

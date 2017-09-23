@@ -4,11 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.chicagosfoodbank.client.survey.SurveyListActivity">
+    tools:context="org.chicagosfoodbank.client.surveys.survey.SurveyActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerViewSurveys"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutFields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewSurveyTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/header_text"
+                android:layout_margin="@dimen/component_keyline_x2"
+                android:gravity="center"
+                tools:text="Survey Title"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>

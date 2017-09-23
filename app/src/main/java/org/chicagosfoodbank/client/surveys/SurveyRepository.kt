@@ -1,4 +1,4 @@
-package org.chicagosfoodbank.client.survey
+package org.chicagosfoodbank.client.surveys
 
 /**
  * Created by nick.cruz on 9/23/17
