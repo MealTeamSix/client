@@ -7,7 +7,7 @@
     tools:context="org.chicagosfoodbank.client.survey.SurveyListActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewSurveys"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

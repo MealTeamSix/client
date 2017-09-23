@@ -11,8 +11,12 @@ class SurveyRepositoryImpl : SurveyRepository {
 
     override fun getSurveys(): List<Survey> {
         return listOf(
-                Survey(1, "Food Insecurity Survey"),
-                Survey(2, "Basic Survey")
+                Survey(1, "Empty Survey", emptyList()),
+                Survey(2, "Basic Survey", listOf(
+                        "Name",
+                        "Location",
+                        "Zip code"
+                ))
         )
     }
 }
