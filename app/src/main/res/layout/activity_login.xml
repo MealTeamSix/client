@@ -16,22 +16,6 @@
         android:textSize="24sp"
         android:text="@string/welcome"/>
 
-    <EditText
-        android:id="@+id/editTextUsername"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:layout_margin="@dimen/component_keyline_x2"
-        android:hint="@string/username"/>
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:layout_margin="@dimen/component_keyline_x2"
-        android:hint="@string/password"/>
-
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
