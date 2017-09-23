@@ -7,6 +7,7 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 import org.chicagosfoodbank.client.surveys.SurveyListActivity
 
+
 class LoginActivity : AppCompatActivity() {
 
     val firebaseAuth = FirebaseAuth.getInstance()
