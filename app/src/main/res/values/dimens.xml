@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="component_keyline">8dp</dimen>
     <dimen name="component_keyline_x2">16dp</dimen>
+    <dimen name="header_text">24sp</dimen>
+    <dimen name="body_text">14sp</dimen>
 </resources>
